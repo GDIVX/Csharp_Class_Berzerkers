@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1_YarinVardimon.Rand
 {
-    internal class Deck<T> where T : struct, IComparable<T>
+    public class Deck<T> where T : struct, IComparable<T>
     {
         Stack<T> _content;
         Stack<T> _discards;
@@ -19,14 +19,9 @@ namespace _1_YarinVardimon.Rand
 
         public Deck(int size)
         {
-            for (int i = 0; i < size; i++)
-            {
-                _content?.Push(new T());
-
-            }
+            _content = new(size);
             _discards = new Stack<T>();
             Size = size;
-            Shuffle();
         }
 
 
@@ -57,6 +52,11 @@ namespace _1_YarinVardimon.Rand
             var conjoined = _content.Concat(_discards).ToArray();
             _content = new Stack<T>(conjoined);
             Shuffle();
+        }
+
+        public void Push(T card)
+        {
+            _content.Push(card);
         }
 
         public bool TryDraw(out T card)
