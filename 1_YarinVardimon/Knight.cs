@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_YarinVardimon.Rand;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +16,8 @@ namespace _1_YarinVardimon
         public Knight()
         {
             _damage = new Bag(new int[] { 0, 1, 3, 5, 5 });
-            _defenseRating = new Dice(2, 8, 1);
-            _hitChance = new Dice(2, 6, 0);
+            _defenseRating = IntegerDice.D8(2, 1);
+            _hitChance = IntegerDice.D6(2);
         }
         public override void Defend(Unit attacker)
         {

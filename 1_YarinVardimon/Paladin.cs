@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_YarinVardimon.Rand;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +16,8 @@ namespace _1_YarinVardimon
         public Paladin()
         {
             _damage = new Bag(new int[] { 2, 2, 4, 4, 4 });
-            _defenseRating = new Dice(4, 4, 2);
-            _hitChance = new Dice(2, 6, 0);
+            _defenseRating = IntegerDice.D4(4, 2);
+            _hitChance = IntegerDice.D6(2);
         }
 
         public override void Charge(Unit target)

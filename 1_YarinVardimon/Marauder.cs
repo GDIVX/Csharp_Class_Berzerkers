@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_YarinVardimon.Rand;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,8 @@ namespace _1_YarinVardimon
         public Marauder()
         {
             _damage = new Bag(new int[] { 0, 0, 2, 6, 6 });
-            _defenseRating = new Dice(2, 4, 2);
-            _hitChance = new Dice(3, 4, 0);
+            _defenseRating = IntegerDice.D6(2,4);
+            _hitChance = IntegerDice.D4(2);
         }
         public override void Defend(Unit attacker)
         {

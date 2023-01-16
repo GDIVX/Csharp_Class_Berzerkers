@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_YarinVardimon.Rand;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +16,8 @@ namespace _1_YarinVardimon
         public Druid()
         {
             _damage = new Bag(new int[] { 0, 1, 3, 5, 5 });
-            _defenseRating = new Dice(2, 6, 1);
-            _hitChance = new Dice(1, 12, 0);
+            _defenseRating = IntegerDice.D6(2, 1);
+            _hitChance = IntegerDice.D12();
         }
 
         void Curse(Unit target)
